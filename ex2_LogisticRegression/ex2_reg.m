@@ -55,7 +55,8 @@ hold off;
 
 % Note that mapFeature also adds a column of ones for us, so the intercept
 % term is handled
-X = mapFeature(X(:,1), X(:,2));
+
+X = mapFeature(X(:,1), X(:,2)); % ch? y?u ?? t?ng cái high polynomial
 
 % Initialize fitting parameters
 initial_theta = zeros(size(X, 2), 1);
@@ -75,7 +76,7 @@ fprintf('Expected gradients (approx) - first five values only:\n');
 fprintf(' 0.0085\n 0.0188\n 0.0001\n 0.0503\n 0.0115\n');
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+% pause;
 
 % Compute and display cost and gradient
 % with all-ones theta and lambda = 10
@@ -90,7 +91,7 @@ fprintf('Expected gradients (approx) - first five values only:\n');
 fprintf(' 0.3460\n 0.1614\n 0.1948\n 0.2269\n 0.0922\n');
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+% pause;
 
 %% ============= Part 2: Regularization and Accuracies =============
 %  Optional Exercise:
@@ -101,7 +102,8 @@ pause;
 %
 %  How does the decision boundary change when you vary lambda? How does
 %  the training set accuracy vary?
-%
+% It makes the Boudary decision under fitting. The Accuracy also draw
+% drammatically
 
 % Initialize fitting parameters
 initial_theta = zeros(size(X, 2), 1);
@@ -134,3 +136,6 @@ p = predict(theta, X);
 fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 fprintf('Expected accuracy (with lambda = 1): 83.1 (approx)\n');
 
+%D? ?oán cho giá tr? X(0,0.5)
+toy=mapFeature(0.0,0.5);
+fprintf('im want to predict X(1, 0.6,0.25): %f\n', predict(theta,toy));
