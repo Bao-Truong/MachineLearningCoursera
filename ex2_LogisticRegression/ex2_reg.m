@@ -102,14 +102,15 @@ fprintf('\nProgram paused. Press enter to continue.\n');
 %
 %  How does the decision boundary change when you vary lambda? How does
 %  the training set accuracy vary?
-% It makes the Boudary decision under fitting. The Accuracy also draw
-% drammatically
+% N?u Lambda quá nh? thì nó s? wary, quá sát v?i training set, gây ra
+% overfitting, training s? t?ng cao(nh?ng gi?m nh? n?a thì c?ng gi?m theo. 
+% N?u Lambda quá l?n thì nó s? underfitting, accurate s? gi?m 
 
 % Initialize fitting parameters
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 1;
+lambda = 1; % th? v?i giá tr? 0
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);
