@@ -25,9 +25,15 @@ Cost=-y.*log(hypo) - (1-y).*log(1-hypo);
 J=sum(Cost)./m;
 
 for i=1:size(theta),
-    tmp= sum( X(:,i)' * (hypo-y) );
-    grad(i,1)=tmp./m;
-end;    
+    grad(i,1)=sum(hypo-y)
+    
+end;
+    
+
+
+
+
+
 
 % =============================================================
 
