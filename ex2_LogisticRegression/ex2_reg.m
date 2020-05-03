@@ -110,7 +110,7 @@ fprintf('\nProgram paused. Press enter to continue.\n');
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 1; % th? v?i giá tr? 0
+lambda = 100; % th? v?i giá tr? 0
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);
