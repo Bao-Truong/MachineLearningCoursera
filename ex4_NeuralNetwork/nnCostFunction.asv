@@ -97,7 +97,7 @@ sigma3= hypo-Y; %(5000,10)
 %step3:
 % size(sigma3) = size(a3) = 5000,10
 %size(sigma2) = size(a2) = 5000,25
-
+size(z_2)
 sigma2=sigma3*Theta2.*sigmoidGradient([ones(size(z_2,1),1) z_2]);
 sigma2=sigma2(:,2:end);
 
@@ -111,10 +111,10 @@ delta1= delta1 + sigma2'*a_1;
 
 %step 5
 
-reg_para1=(lambda/m).*(Theta1(:,2:end));
-reg_para2=(lambda/m).*(Theta2(:,2:end));
-Theta1_grad= delta1./m +[zeros(size(Theta1(:,1))) reg_para1];
-Theta2_grad= delta2./m +[zeros(size(Theta2(:,1))) reg_para2];
+reg_para=(lambda/m).*Theta
+
+Theta1_grad= delta1./m;
+Theta2_grad=delta2./m;
 
 % -------------------------------------------------------------
 
